@@ -1,0 +1,244 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 50px auto;
+      width: 300px;
+    }
+    input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <form action="/register" method="POST">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+      <input type="submit" value="Register">
+    </form>
+  </div>
+</body>
+</html>
+ -->
+
+
+<style>
+  body {
+      margin: 0;
+      padding: 0;
+      /* background: url(https://i.ibb.co/VQmtgjh/6845078.png) no-repeat; */
+      background-image: url('resources/register.jpg');
+      height: 100vh;
+      font-family: sans-serif;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+      body {
+          background-size: cover;
+          overflow: fixed;
+      }
+  }
+  
+  #particles-js {
+      height: 100%;
+  }
+  
+  .loginBox {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      min-height: 200px;
+      background: #3a2d2dcc;
+      border-radius: 10px;
+      padding: 40px;
+      box-sizing: border-box;
+  }
+  
+  .user {
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 20px;
+  }
+  
+  h3 {
+      margin: 0;
+      padding: 0 0 20px;
+      color: #aa6ee6;
+      text-align: center;
+  }
+  
+  .loginBox input {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  
+  .loginBox input[type="text"],
+  .loginBox input[type="password"],
+  .loginBox input[type="email"] {
+      border: none;
+      border-bottom: 2px solid #262626;
+      outline: none;
+      height: 40px;
+      color: #fff;
+      background: transparent;
+      font-size: 16px;
+      padding-left: 20px;
+      box-sizing: border-box;
+  }
+  
+  .loginBox input[type="text"]:hover,
+  .loginBox input[type="password"]:hover,
+  .loginBox input[type="email"]:hover {
+      color: #42F3FA;
+      border: 1px solid #42F3FA;
+      box-shadow: 0 0 5px rgba(0, 255, 0, .3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black;
+  }
+  
+  .loginBox input[type="text"]:focus,
+  .loginBox input[type="password"]:focus,
+  .loginBox input[type="email"]:focus {
+      border-bottom: 2px solid #42F3FA;
+  }
+  
+  .inputBox {
+      position: relative;
+  }
+  
+  .inputBox span {
+      position: absolute;
+      top: 10px;
+      color: #262626;
+  }
+  
+  .loginBox input[type="submit"] {
+      border: none;
+      outline: none;
+      height: 40px;
+      font-size: 16px;
+      background: #aa6ee6;
+      color: #fff;
+      border-radius: 20px;
+      cursor: pointer;
+  }
+  
+  .loginBox a {
+      color: #262626;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+  }
+  
+  a:hover {
+      color: #00ffff;
+  }
+  
+  p {
+      color: #0000ff;
+  }
+
+  .signup-link {
+    color: #aa6ee6;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.signup-link:hover {
+    color: #ADD8E6; /* Light blue color on hover */
+}
+  
+  </style>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login Page</title>
+      <!-- <link rel="stylesheet" type="text/css" href="/views/login.css">  -->
+  </head>
+  <body>
+  
+  <div class="loginBox">
+      <h3>Sign up here</h3>
+      <form id="registrationForm" action="/register" method="POST">
+          <div class="inputBox">
+              <input id="uname" type="text" name="username" placeholder="Username" required>
+              <input id="email" type="email" name="email" placeholder="Email" required>
+              <input id="pass" type="password" name="password" placeholder="Password" required>
+              <input id="confirmPass" type="password" name="confirmPassword" placeholder="Confirm Password" required>
+          </div>
+          <input type="submit" name="" value="Register">
+      </form> 
+      <div class="text-center">
+        <p class="signup-link" onclick="redirectToRegister()">Sign-In</p>
+    </div>
+  </div>
+  
+  </body>
+  </html>
+  <script>
+
+     // Function to handle form submission
+     document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Send registration data using fetch API
+        fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: document.getElementById('uname').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('pass').value,
+                confirmPassword: document.getElementById('confirmPass').value
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                // If response is not ok, handle error
+                return response.json().then(error => {
+                    console.log(error)
+                    throw new Error(error.errors[0].msg || error.errors[0].message || 
+                    'An error occurred while registering. Please try again later.');
+                });
+            }
+            // If registration is successful, display success message
+            alert('Registration successful. Confirmation email sent. Please check your inbox.');
+            // Optionally, redirect user to another page after successful registration
+            window.location.href = '/login';
+        })
+        .catch(error => {
+            console.log(error)
+            // If an error occurs during registration, display error message
+            alert(error.message || 'An error occurred while registering. Please try again later.');
+        });
+    });
+
+    function redirectToRegister() {
+        window.location.href = "/login";
+    }
+</script>

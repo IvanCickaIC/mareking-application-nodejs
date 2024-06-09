@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PG Tatjana Cicka</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Favicon Links -->
+   <link rel="apple-touch-icon" sizes="180x180" href="resources/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16x16.png">
+   <link rel="manifest" href="resources/site.webmanifest">
+   <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
+   <link rel="icon" sizes="192x192" href="resources/android-chrome-192x192.png">
+   <link rel="icon" sizes="512x512" href="resources/android-chrome-512x512.png">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info.gazdinstvo@gmail.com">info.gazdinstvo@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:0692147922">069-214-7922</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://www.facebook.com/povrcka" target="_blank" rel="sponsored" style="color: green;">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i> PG Tatjana Cicka
+                    </a>                
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+           
+        <div class="navbar-brand d-flex align-items-center">
+            <img src="resources/bumblebee.jpg" alt="Logo" class="rounded-circle" style="width: 60px; height: 60px;">
+        </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/gallery">Galerija</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <!-- <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div> -->
+                    </div>
+                    <% if (logedUser) { %>
+                        <span class="navbar-text text-dark mr-3">Zdravo <%= logedUser.username %> !</span>
+                    <% } else { %>
+                        <a class="nav-icon position-relative text-decoration-none" href="/login">
+                            <i class="fa fa-fw fa-user-plus text-dark mr-3"></i>
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <style>
+        .banner-hero {
+            background-size: cover;
+            background-position: center;
+            min-height: 300px; /* Adjust this as necessary */
+            padding: 180px 0; /* Maintain height if image height is lost */
+        }
+    
+        .banner-text {
+            text-shadow: 3px 3px 3px white; /* Add text shadow for readability */
+            margin-left: 0; /* Align text to the left */
+        }
+    
+        @media (max-width: 768px) {
+            .banner-hero {
+                padding: 90px 0; /* Adjust padding for smaller screens */
+            }
+        }
+    </style>
+    
+
+<!-- Start Banner Hero -->
+<div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <% let topListaProducts = products.filter(product => product.category.categoryName === 'Top Lista'); %>
+        <% topListaProducts.forEach((product, index) => { %>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="<%= index %>" class="<%= index === 0 ? 'active' : '' %>"></li>
+        <% }); %>
+    </ol>
+    <div class="carousel-inner">
+        <% topListaProducts.forEach((product, index) => { %>
+            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                <div class="container">
+                    <div class="row p-5 banner-hero" style="background-image: url('<%= product.pictureUrl %>');">
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left banner-text">
+                                <h1 class="h1" style="font-weight: 400 !important; "><%= product.productName %></h1>
+                                <!-- <h3 class="h2"><%= product.category.categoryName %></h3>
+                                <p>
+                                    <%= product.description %>
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
+
+
+
+
+<!-- Start Featured Product -->
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Pregledajte naš asortiman proizvoda</h1>
+                <!-- <p>
+                    Ovi produkti su gajeni i pravljeni sa ljubavlju
+                </p> -->
+            </div>
+        </div>
+        <div class="row">
+            <% products.forEach(product => { %>
+                <% if (product.category.categoryName === 'Prerada') { %>
+
+                    <div class="col-12 col-md-4 mb-4">
+                        <div class="card h-100">
+                            <a href="/productDetails/<%= product.productId %>">
+                                <img src="<%= product.pictureUrl %>" class="card-img-top" alt="<%= product.productName %>" onload="console.log('Image loaded successfully!')" onerror="console.error('Image failed to load:', '<%= product.pictureUrl %>')">
+                            </a>
+                            <div class="card-body">
+                                <ul class="list-unstyled d-flex justify-content-between">
+                                    <li>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-warning fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                        <i class="text-muted fa fa-star"></i>
+                                    </li>
+                                    <li class="text-muted text-right">$<%= product.price %></li>
+                                </ul>
+                                <a href="/productDetails/<%= product.productId %>" class="h2 text-decoration-none text-dark"><%= product.productName %></a>
+                                <p class="card-text">
+                                    <%= product.description %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% }) %>
+        </div>
+    </div>
+</section>
+<!-- End Featured Product -->
+
+
+
+
+
+  
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 pt-5">
+                    <div class="d-flex align-items-center">
+                        <img src="resources/bumblebee.jpg" alt="Logo" class="rounded-circle footer-logo" style="width: 100px; height: 100px;">
+                        <h2 class="h2 text-success border-bottom pb-3 border-light logo ml-3">PG Tatjana Cicka</h2>
+                    </div>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Janka Čmelika 91, Kovačica 26210
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            Tatjana Cicka: <a class="text-decoration-none" href="tel:0692147922">069-214-7922</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            Pavel Cicka: <a class="text-decoration-none" href="tel:0631040414">063-104-0414</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info.gazdinstvo@gmail.com</a>
+                        </li>
+                        <li>
+                            <a class="text-light" href="https://www.facebook.com/povrcka" target="_blank" rel="sponsored" style="color: green;">
+                                <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i> PG Tatjana Cicka
+                            </a>                         
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Radno vreme</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>sreda i subota - pijaca Kovačica 7:00 - 12:00 č</li>
+                        <li>četvrtak - pijaca Padina 6:00 - 11:00 č</li>
+                        <li>pon-pet: Janka Čmelika 91, Kovačica 26210 </li>
+                        <li> od 16:00 - 18:00 č</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light" style="font-size: 80% !important;">
+                            Copyright © 2024 Ivan Cicka 
+                            | Designed by <a style="font-size: 80% !important;" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+            
+        
+        
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+</body>
+
+</html>

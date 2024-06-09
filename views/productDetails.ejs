@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PG Tatjana Cicka</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Favicon Links -->
+      <link rel="apple-touch-icon" sizes="180x180" href="/resources/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/resources/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/resources/favicon-16x16.png">
+      <link rel="manifest" href="/resources/site.webmanifest">
+      <link rel="icon" href="/resources/favicon.ico" type="image/x-icon">
+      <link rel="icon" sizes="192x192" href="/resources/android-chrome-192x192.png">
+      <link rel="icon" sizes="512x512" href="/resources/android-chrome-512x512.png">
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/templatemo.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="/assets/css/fontawesome.min.css">
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick-theme.css">
+
+</head>
+
+<body>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info.gazdinstvo@gmail.com">info.gazdinstvo@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:0692147922">069-214-7922</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://www.facebook.com/povrcka" target="_blank" rel="sponsored" style="color: green;">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i> PG Tatjana Cicka
+                    </a>                
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <div class="navbar-brand d-flex align-items-center">
+                <img src="/resources/bumblebee.jpg" alt="Logo" class="rounded-circle" style="width: 60px; height: 60px;">
+            </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/gallery">Galerija</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <!-- <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div>
+                        <% if (logedUser) { %>
+                            <span class="navbar-text text-dark mr-3">Zdravo <%= logedUser.username %> !</span>
+                        <% } else { %>
+                            <a class="nav-icon position-relative text-decoration-none" href="/login">
+                                <i class="fa fa-fw fa-user-plus text-dark mr-3"></i>
+                            </a>
+                        <% } %>           
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- Open Content -->
+    <section class="bg-light">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-lg-5 mt-5">
+                    <div class="card mb-3">
+                        <img class="card-img img-fluid" src="<%= product.pictureUrl %>" alt="Card image cap" id="product-detail" style="height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <!-- col end -->
+                <div class="col-lg-7 mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="h2"> <%= product.productName %></h1>
+                            <p class="h3 py-2"><%= product.price %> rsd</p>
+                            <p class="py-2">
+                                <% for (let i = 1; i <= 5; i++) { %>
+                                    <% if (i <= Math.floor(averageRating)) { %>
+                                        <i class="fa fa-star text-warning"></i>
+                                    <% } else if (i === Math.ceil(averageRating) && averageRating % 1 !== 0) { %>
+                                        <i class="fa fa-star-half-alt text-warning"></i>
+                                    <% } else { %>
+                                        <i class="fa fa-star text-secondary"></i>
+                                    <% } %>
+                                <% } %>
+                                <span class="list-inline-item text-dark">Rating <%= averageRating %> | <%= comments.length %> Comments</span>
+                            </p>
+                            <!-- <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <h6>Brand:</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-muted"><strong>Easy Wear</strong></p>
+                                </li>
+                            </ul> -->
+
+                            <h6>Opis:</h6>
+                            <p><%= product.description %></p>
+                            <!-- <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <h6>Avaliable Color :</h6>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-muted"><strong>White / Black</strong></p>
+                                </li>
+                            </ul> -->
+
+                            <h6>Sastojci:</h6>
+                            <ul class="list-unstyled pb-3">
+                                <% product.ingredients.forEach(ingredient => { %>
+                                    <li><%= ingredient.ingredientName %></li>
+                                <% }) %>
+                            </ul>
+
+                            <!-- <form action="" method="GET">
+                                <input type="hidden" name="product-title" value="Activewear">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <ul class="list-inline pb-3">
+                                            <li class="list-inline-item">Size :
+                                                <input type="hidden" name="product-size" id="product-size" value="S">
+                                            </li>
+                                            <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-auto">
+                                        <ul class="list-inline pb-3">
+                                            <li class="list-inline-item text-right">
+                                                Quantity
+                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                            </li>
+                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row pb-3">
+                                    <div class="col d-grid">
+                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
+                                    </div>
+                                    <div class="col d-grid">
+                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                    </div>
+                                </div>
+                            </form> -->
+                            <!-- Comment Form Button -->
+                             <!-- Comment Form Button -->
+                            <!-- <button type="button" class="btn btn-primary comment-btn position-absolute bottom-0 end-0 m-4" data-bs-toggle="modal" data-bs-target="#commentModal">
+                                Add Comment
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Content -->
+
+    
+    
+  
+    
+    <style>
+        .gradient-custom {
+            /* fallback for old browsers */
+            background: #4facfe;
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to bottom right, rgba(79, 172, 254, 1), rgba(0, 242, 254, 1));
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to bottom right, rgba(79, 172, 254, 1), rgba(0, 242, 254, 1));
+        }
+        .comment-text {
+            transform: scale(0.9); /* Reduce the size of the comment text */
+        }
+        .comment-username {
+            font-weight: bold; /* Make the username bold */
+        }
+        .comment-date {
+            opacity: 0.5; /* Reduce the opacity of the date */
+            font-size: 0.8em; /* Adjust the font size of the date */
+        }
+       
+    
+      
+    /* Star rating styles */
+    .star-rating .fa-star {
+        cursor: pointer; /* Enable clicking on stars */
+    }
+    .star-rating .fa-star.checked {
+        color: gold; /* Change star color when clicked */
+    }
+    .star-rating .fa-star:hover,
+    .star-rating .fa-star.hovered {
+        color: gold; /* Change star color on hover */
+    }
+
+    </style>
+
+<% 
+// Inline definition of formatDate function
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
+    const day = ('0' + date.getDate()).slice(-2);
+    return `${year}-${month}-${day}`;
+}
+%>
+    
+    <!-- Start Comments Section -->
+    <section class="gradient-custom">
+        <div class="container my-5 py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 col-lg-10 col-xl-8">
+                    <div class="card">
+                        <div class="card-body p-4" style="background-color: #bdd3eb;">
+                            <!-- Button to toggle comments visibility -->
+                            <h4 class="text-center mb-4 pb-2"><button id="toggleCommentsBtn" class="btn btn-primary">Prikazi Recenzije</button></h4>
+    
+                            <!-- Comments Section -->
+                            <div id="commentsSection" style="display: none;">
+                                <% comments.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).forEach(comment => { %>
+                                <div class="d-flex flex-start mt-4">
+                                    <div class="flex-grow-1 flex-shrink-1">
+                                        <div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="mb-1 comment-username">
+                                                    <%= comment.user.username %> <span class="small comment-date">- <%= formatDate(comment.createdAt) %></span>
+                                                </p>
+                                            </div>
+                                            <p class="small mb-0 comment-text">
+                                                <%= comment.text %>
+                                            </p>
+                                            <hr style="opacity: 0.5;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                            </div>
+                            
+                            <!-- Form for submitting new comments -->
+                            <form id="commentForm" style="display: none;">
+                                <div class="form-group">
+                                    <label for="commentText">Ostavi recenziju:</label>
+                                    <textarea class="form-control" id="commentText" rows="3"></textarea>
+                                </div>
+                                <!-- Star Rating -->
+                                <div class="form-group">
+                                    <label>Oceni proizvod:</label>
+                                    <div id="starRating" class="star-rating">
+                                        <span class="fa fa-star checked" data-rating="1"></span>
+                                        <span class="fa fa-star checked" data-rating="2"></span>
+                                        <span class="fa fa-star checked" data-rating="3"></span>
+                                        <span class="fa fa-star checked" data-rating="4"></span>
+                                        <span class="fa fa-star" data-rating="5"></span>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary comment-btn position-absolute bottom-0 end-0 m-4" id="submitCommentBtn">Pošalji recenziju</button>
+                            </form>
+                            <div id="errorContainer" style="display: none; color: red; margin-bottom: 50px;"></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Comments Section -->
+    
+    <script>
+        // Toggle visibility of comments section and comment form
+        document.getElementById('toggleCommentsBtn').addEventListener('click', function() {
+            var commentsSection = document.getElementById('commentsSection');
+            var commentForm = document.getElementById('commentForm');
+            if (commentsSection.style.display === 'none') {
+                commentsSection.style.display = 'block';
+                commentForm.style.display = 'block';
+                this.textContent = 'Sakri Recenzije';
+            } else {
+                commentsSection.style.display = 'none';
+                commentForm.style.display = 'none';
+                this.textContent = 'Comments';
+            }
+        });
+    
+        // Star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.fa-star');
+    let ratingValue = 4; // Default rating value if initially set
+
+    // Function to update stars display based on rating
+    function updateStars(rating) {
+        stars.forEach(star => {
+            if (star.getAttribute('data-rating') <= rating) {
+                star.classList.add('checked');
+            } else {
+                star.classList.remove('checked');
+            }
+        });
+    }
+
+    // Initial update based on default ratingValue
+    updateStars(ratingValue);
+
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            ratingValue = this.getAttribute('data-rating');
+            updateStars(ratingValue);
+        });
+
+        star.addEventListener('mouseover', function() {
+            const hoverRating = this.getAttribute('data-rating');
+            stars.forEach(s => {
+                if (s.getAttribute('data-rating') <= hoverRating) {
+                    s.classList.add('hovered');
+                } else {
+                    s.classList.remove('hovered');
+                }
+            });
+        });
+
+        star.addEventListener('mouseleave', function() {
+            stars.forEach(s => s.classList.remove('hovered'));
+            updateStars(ratingValue);
+        });
+    });
+
+    // Submit comment functionality
+    document.getElementById('submitCommentBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+        const productId = '<%= product.productId %>';
+        submitComment(productId, ratingValue); // Pass ratingValue as a parameter
+    });
+});
+
+
+
+        // Funkcija za slanje komentara na server
+function submitComment(productId,ratingValue) {
+    // Izvadi podatke iz forme
+    var commentText = document.getElementById('commentText').value;
+    // Log the ratingValue to ensure it's correct
+    console.log('Star Rating:', ratingValue);
+
+
+    // Napravi objekat sa podacima koje želimo poslati na server
+    var formData = {
+        comment: commentText,
+        rating: ratingValue,
+        productId: productId
+    };
+
+    // Napravi Fetch zahtjev za slanje podataka na rutu /submitComment
+    fetch('/submitComment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (!response.ok) {
+        // Provjeri status koda odgovora
+            if (response.status === 401) {
+                // Ako je status 401 (Unauthorized), prikaži poruku o grešci korisniku
+                const errorContainer = document.getElementById('errorContainer');
+                errorContainer.innerHTML = 'Morate biti prijavljeni da biste ostavili komentar. Molimo vas da se <a href="/login">prijavite ovdje</a>.';
+                errorContainer.style.display = 'block';
+            } else {
+                // Ako je status koda bilo koji drugi od 401, obradi ga kao opću grešku
+                throw new Error('Network response was not ok');
+            }
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Ovdje možeš obraditi odgovor od servera ako je potrebno
+        console.log('Odgovor od servera:', data);
+        // Na primjer, možeš prikazati poruku o uspjehu
+        if(data.success){
+            alert('Komentar je uspješno poslan!');
+            location.reload();
+        }
+        
+    })
+    .catch(error => {
+        // Ovdje možeš obraditi grešku ako do nje dođe
+        console.error('Greška prilikom slanja komentara:', error);
+        // Na primjer, možeš prikazati poruku o grešci
+        alert('Došlo je do greške prilikom slanja komentara.');
+    });
+}
+
+    // // Dodaj event listener na dugme za slanje komentara
+    // document.getElementById('submitCommentBtn').addEventListener('click', function(event) {
+    //     event.preventDefault(); // Spriječi podrazumijevano ponašanje forme (slanje putem HTML-a)
+    //     var productId = '<%= product.productId %>';
+    //     submitComment(productId,ratingValue); // Pozovi funkciju za slanje komentara
+    // });
+    
+    </script>
+    
+
+
+
+  
+  
+   
+
+
+     
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 pt-5">
+                    <div class="d-flex align-items-center">
+                        <img src="/resources/bumblebee.jpg" alt="Logo" class="rounded-circle footer-logo" style="width: 100px; height: 100px;">
+                        <h2 class="h2 text-success border-bottom pb-3 border-light logo ml-3">PG Tatjana Cicka</h2>
+                    </div>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Janka Čmelika 91, Kovačica 26210
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            Tatjana Cicka: <a class="text-decoration-none" href="tel:0692147922">069-214-7922</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            Pavel Cicka: <a class="text-decoration-none" href="tel:0631040414">063-104-0414</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info.gazdinstvo@gmail.com</a>
+                        </li>
+                        <li>
+                            <a class="text-light" href="https://www.facebook.com/povrcka" target="_blank" rel="sponsored" style="color: green;">
+                                <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i> PG Tatjana Cicka
+                            </a>                         
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Radno vreme</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>sreda i subota - pijaca Kovačica 7:00 - 12:00 č</li>
+                        <li>četvrtak - pijaca Padina 6:00 - 11:00 č</li>
+                        <li>pon-pet: Janka Čmelika 91, Kovačica 26210 </li>
+                        <li> od 16:00 - 18:00 č</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light" style="font-size: 80% !important;">
+                            Copyright © 2024 Ivan Cicka 
+                            | Designed by <a style="font-size: 80% !important;" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+            
+        
+        
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/templatemo.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <!-- End Script -->
+
+    <!-- Start Slider Script -->
+    <script src="/assets/js/slick.min.js"></script>
+    <script>
+        $('#carousel-related-product').slick({
+            infinite: true,
+            arrows: false,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            dots: true,
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 3
+                    }
+                }
+            ]
+        });
+
+    </script>
+    <!-- End Slider Script -->
+
+</body>
+
+</html>

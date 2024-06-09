@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PG Tatjana Cicka</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+       <!-- Favicon Links -->
+   <link rel="apple-touch-icon" sizes="180x180" href="resources/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon-16x16.png">
+   <link rel="manifest" href="resources/site.webmanifest">
+   <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
+   <link rel="icon" sizes="192x192" href="resources/android-chrome-192x192.png">
+   <link rel="icon" sizes="512x512" href="resources/android-chrome-512x512.png">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+</head>
+
+<body>
+     <!-- Start Top Nav -->
+     <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info.gazdinstvo@gmail.com">info.gazdinstvo@gmail.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:0692147922">069-214-7922</a>
+                </div>
+                <div>
+                    <a class="text-light" href="https://www.facebook.com/povrcka" target="_blank" rel="sponsored" style="color: green;">
+                        <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i> PG Tatjana Cicka
+                    </a>                
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <div class="navbar-brand d-flex align-items-center">
+                <img src="resources/bumblebee.jpg" alt="Logo" class="rounded-circle" style="width: 60px; height: 60px;">
+            </div>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/gallery">Galerija</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <!-- <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+                            <div class="input-group-text">
+                                <i class="fa fa-fw fa-search"></i>
+                            </div>
+                        </div>
+                    </div> -->
+                    <% if (logedUser) { %>
+                        <span class="navbar-text text-dark mr-3">Zdravo <%= logedUser.username %> !</span>
+                    <% } else { %>
+                        <a class="nav-icon position-relative text-decoration-none" href="/login">
+                            <i class="fa fa-fw fa-user-plus text-dark mr-3"></i>
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <section class="bg-success py-5">
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-md-8 text-white">
+                    
+                    <section>
+                        <h1>Gazdinstvo Tatjana Cicka</h1>
+                        <p><ul><li><b>Nosilac gazdinstva:</b> Dipl. ing poljoprivrede Cicka Tatjana.</p></li></ul>
+                    
+                        <h2>Osnovna delatnost gazdinstva</h2>
+                        <ul>
+                            <li>Proizvodnja i prodaja saksijskog cveća i rasada biljaka</li>
+                            <li>Sezonsko povrće u zaštićenom prostoru i na otvorenom polju</li>
+                            <li>Prerada sopstvenih proizvoda</li>
+                        </ul>
+                        <h2>Proizvodni segmenti</h2>
+                        <h3>Staklenik</h3>
+                        <ul>
+                            <li><b>Lokacija:</b> Kovačica, ulica Janka Čmelika broj 91.</li>
+                            <li><b>Opis:</b> Proizvodnja cveća i rasada odvija se u kontrolisanim uslovima staklenika.</li>
+                        </ul>
+                        <h3>Zaštićeni prostor – Plastenici</h3>
+                            <ul>
+                                <li><b>Površina: </b> Ukupno 2500 m2.</li>
+                                <li><b>Lokacija: </b> Pored puta Kovačica - Debeljača.</li>
+                                <li><b>Tip plastenika: </b> Tunelski tip sa duplom folijom i instaliranim navodnjavanjem.</li>
+                                <li><b>Proizvodnja tokom cele godine: </b>
+                                    <ul>
+                                        <li>Zimska proizvodnja: Zelene salate, rotkvica, spanać, mladi luk.</li>
+                                        <li>Letnja proizvodnja: Paradajz, paprika, krastavac.</li>
+                                        <li>Jesenja proizvodnja: Kornišoni, salata, rotkvica.</li>
+                                    </ul>
+                                </li>
+                                <li><b>Đubrenje: </b> Unošenje stajnjaka i prihranjivanje vodotopivim đubrivima.</li>
+                            </ul>
+                        <h3>Otvoreni prostor</h3>
+                            <ul>
+                                <li><b>Površina: </b> 2 hektara.</li>
+                                <li><b>Povrtarske kulture: </b> Paprika, paradajz, patlidžan, karfiol, brokoli, kupus, praziluk, celer.</li>
+                                <li><b>Navodnjavanje: </b> Tifonom sa kišnim krilom.</li>
+                            </ul>
+                        <h3>Prerada povrća</h3>
+                            <ul>
+                                <li><b>Metod: </b> Manuelna prerada po tradicionalnim receptima.</li>
+                                <li><b>Proizvodi: </b>
+                                    <ul>
+                                        <li>Ceđeni paradajz, kuvani paradajz u rinfuzu (plastična nepovratna ambalaža).</li>
+                                        <li>Kornišoni, paprika u filetima, cvekla, mešana salata, prženi ajvar (pasterizacija, bez konzervansa, staklena ambalaža).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                    </section>
+                </div>
+                <div class="col-md-4">
+                    <img src="resources/rotkvice.jpg" alt="About Hero" class="about-images about-image2">
+                    <!-- Slika 2 -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="resources/babura.jpg" alt="About Hero" class="about-images about-image1">
+                            <!-- Slika 1 -->
+                        </div>
+                        <div class="col-md-6">
+                            <img src="resources/ljuta.jpg" alt="About Hero" class="about-images about-image3">
+                            <!-- Slika 3 -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="resources/muskati.jpg" alt="About Hero" class="about-images about-image1">
+                            <!-- Slika 1 -->
+                        </div>
+                        <div class="col-md-6">
+                            <img src="resources/viola.jpg" alt="About Hero" class="about-images about-image3">
+                            <!-- Slika 3 -->
+                        </div>
+                    </div>
+                    <img src="resources/prerada.JPG" alt="About Hero" class="about-images about-image2">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Close Banner -->
+
+
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 pt-5">
+                    <div class="d-flex align-items-center">
+                        <img src="resources/bumblebee.jpg" alt="Logo" class="rounded-circle footer-logo" style="width: 100px; height: 100px;">
+                        <h2 class="h2 text-success border-bottom pb-3 border-light logo ml-3">PG Tatjana Cicka</h2>
+                    </div>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            Janka Čmelika 91, Kovačica 26210
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            Tatjana Cicka: <a class="text-decoration-none" href="tel:0692147922">069-214-7922</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            Pavel Cicka: <a class="text-decoration-none" href="tel:0631040414">063-104-0414</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info.gazdinstvo@gmail.com</a>
+                        </li>
+                        <li>
+                            <a class="text-light" href="https://www.facebook.com/povrcka" target="_blank" rel="sponsored" style="color: green;">
+                                <i class="fab fa-facebook-f fa-sm fa-fw me-2"></i> PG Tatjana Cicka
+                            </a>                         
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Radno vreme</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>sreda i subota - pijaca Kovačica 7:00 - 12:00 č</li>
+                        <li>četvrtak - pijaca Padina 6:00 - 11:00 č</li>
+                        <li>pon-pet: Janka Čmelika 91, Kovačica 26210 </li>
+                        <li> od 16:00 - 18:00 č</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light" style="font-size: 80% !important;">
+                            Copyright © 2024 Ivan Cicka 
+                            | Designed by <a style="font-size: 80% !important;" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+</body>
+
+</html>
